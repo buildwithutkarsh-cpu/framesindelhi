@@ -15,17 +15,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Mukta:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:"Tillana";src:url("fonts/Tillana-Regular.ttf") format("truetype");font-weight:400;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
-@font-face{font-family:"Tillana";src:url("fonts/Tillana-Medium.ttf") format("truetype");font-weight:500;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
-@font-face{font-family:"Tillana";src:url("fonts/Tillana-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
-@font-face{font-family:"Tillana";src:url("fonts/Tillana-Bold.ttf") format("truetype");font-weight:700;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
-@font-face{font-family:"Tillana";src:url("fonts/Tillana-ExtraBold.ttf") format("truetype");font-weight:800;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
+@font-face{font-family:"Kalam";src:url("fonts/Kalam-Light.ttf") format("truetype");font-weight:300;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
+@font-face{font-family:"Kalam";src:url("fonts/Kalam-Regular.ttf") format("truetype");font-weight:400;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
+@font-face{font-family:"Kalam";src:url("fonts/Kalam-Bold.ttf") format("truetype");font-weight:700;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+A8E0-A8FF}
 :root{--red:#e3120b;--deep:#a80c07;--paper:#f6f5f1;--green:#2f8f4e;--ink:#1d1414;--pink:#ffb4b1;
 --m-yellow:#f7c600;--m-blue:#1c6fd1;--m-violet:#7b3fa0;--m-pink:#e8579a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--red);color:#fff;font-family:"Tillana","Mukta","Noto Sans Devanagari",system-ui,sans-serif;font-size:1.05rem;line-height:1.55;overflow-x:hidden}
-.disp{font-family:"Khand","Tillana","Noto Sans Devanagari",Impact,sans-serif;font-weight:800;line-height:1.1;margin:0}
+body{margin:0;background:var(--red);color:#fff;font-family:"Kalam","Mukta","Noto Sans Devanagari",system-ui,sans-serif;font-size:1.05rem;line-height:1.55;overflow-x:hidden}
+.disp{font-family:"Kalam","Khand","Noto Sans Devanagari",Impact,sans-serif;font-weight:800;line-height:1.1;margin:0}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 
@@ -54,7 +52,7 @@ a{color:inherit}
 /* marquee of mohallas */
 .ticker{background:var(--m-yellow);color:var(--ink);overflow:hidden;white-space:nowrap;border-block:3px solid var(--ink)}
 .ticker div{display:inline-block;padding:.45rem 0;animation:run 38s linear infinite}
-.ticker span{font-family:"Khand","Tillana","Noto Sans Devanagari",sans-serif;font-weight:700;font-size:1.5rem;margin:0 1.1rem}
+.ticker span{font-family:"Kalam","Khand","Noto Sans Devanagari",sans-serif;font-weight:700;font-size:1.5rem;margin:0 1.1rem}
 .ticker b{color:var(--red);font-weight:700}
 @keyframes run{to{transform:translateX(-50%)}}
 
@@ -71,7 +69,7 @@ a{color:inherit}
 .mark .disp{font-size:1.9rem;color:var(--red);letter-spacing:.01em}
 .main h1{font-size:clamp(2.7rem,8.5vw,5.4rem);color:var(--red);margin:.4rem 0 .9rem}
 .main p{max-width:34rem;margin:0 auto 1.6rem;font-size:1.15rem}
-.horn{display:inline-block;margin-top:1.4rem;background:var(--ink);color:var(--m-yellow);padding:.2rem .8rem;font-family:"Khand",sans-serif;font-weight:700;font-size:1.05rem;transform:rotate(1.5deg);border:2px dashed var(--m-yellow)}
+.horn{display:inline-block;margin-top:1.4rem;background:var(--ink);color:var(--m-yellow);padding:.2rem .8rem;font-family:"Kalam","Khand",sans-serif;font-weight:700;font-size:1.05rem;transform:rotate(1.5deg);border:2px dashed var(--m-yellow)}
 .btn{display:inline-block;background:var(--red);color:#fff;padding:.8rem 1.7rem;font-weight:800;font-size:1.1rem;text-decoration:none;border-radius:3px;box-shadow:0 5px 0 var(--deep);transition:transform .12s,box-shadow .12s}
 .btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--deep)}
 .btn.alt{background:var(--ink);box-shadow:0 5px 0 #000}
@@ -99,7 +97,7 @@ h2.disp{font-size:clamp(2.6rem,7vw,4.4rem);text-align:center;margin-bottom:2rem}
 .where{max-width:900px;margin:0 auto;text-align:center}
 .where p{max-width:34rem;margin:-.8rem auto 1.6rem}
 .chips{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;padding:0;margin:0;list-style:none}
-.chips li{background:var(--m-yellow);color:var(--ink);border:3px solid var(--ink);border-radius:999px 999px 10px 10px;padding:.15rem 1rem;font-family:"Khand","Tillana","Noto Sans Devanagari",sans-serif;font-weight:700;font-size:1.35rem;box-shadow:0 4px 0 var(--ink)}
+.chips li{background:var(--m-yellow);color:var(--ink);border:3px solid var(--ink);border-radius:999px 999px 10px 10px;padding:.15rem 1rem;font-family:"Kalam","Khand","Noto Sans Devanagari",sans-serif;font-weight:700;font-size:1.35rem;box-shadow:0 4px 0 var(--ink)}
 .chips li:nth-child(3n+2){background:var(--green);color:#fff}
 .chips li:nth-child(3n){background:#fff}
 .chips li:nth-child(odd){transform:rotate(-2deg)}
@@ -230,7 +228,7 @@ footer a{font-weight:600}
     <svg viewBox="0 0 64 64" aria-hidden="true" style="width:34px;height:34px"><rect width="64" height="64" rx="14" fill="#e3120b"/><path d="M32 50 14 32a10 10 0 0 1 18-8 10 10 0 0 1 18 8z" fill="#fff"/></svg>
     <span class="disp" style="font-size:1.5rem;color:var(--red)">Frames in Delhi</span>
   </div>
-  <p lang="hi">दिल्ली से, दिल्ली के लिए ❤️</p>
+  <p lang="hi">दिल्ली से, दिल्ली के लिए </p>
   <p>A <a href="https://delhiadda.xyz">Delhi Adda</a> initiative.</p>
   <p><a href="https://instagram.com/framesindelhi">Instagram</a> &nbsp;|&nbsp; <a href="mailto:delhiekada@gmail.com">delhiekada@gmail.com</a></p>
 </footer>
