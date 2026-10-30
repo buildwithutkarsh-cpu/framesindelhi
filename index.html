@@ -103,6 +103,38 @@ h2.disp{font-size:clamp(2.6rem,7vw,4.4rem);text-align:center;margin-bottom:2rem}
 .chips li:nth-child(odd){transform:rotate(-2deg)}
 .chips li:nth-child(even){transform:rotate(1.5deg)}
 
+
+/* --- feels layer --- */
+.vf{position:absolute;inset:.9rem;pointer-events:none}
+.vf i{position:absolute;width:22px;height:22px;border:3px solid var(--red)}
+.vf i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0}
+.vf i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0}
+.vf i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0}
+.vf i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0}
+.rec{position:absolute;top:1.15rem;left:50%;transform:translateX(-50%);font-weight:800;font-size:.8rem;color:var(--red);display:flex;gap:.4rem;align-items:center}
+.rec::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--red);animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.poem{min-height:3.6em;font-family:"Kalam","Mukta",sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin:0 auto 1.4rem;max-width:30rem;transition:opacity .6s}
+.poem.out{opacity:0}
+.gallery{max-width:1050px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2.2rem;justify-content:center;padding:0 .5rem}
+.pola{position:relative;width:min(100%,300px);background:#fff;padding:.75rem .75rem 0;color:var(--ink);box-shadow:0 14px 30px rgba(70,0,0,.4);transform:rotate(var(--r))}
+.pola::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:28px;margin-left:-45px;background:rgba(247,198,0,.8);transform:rotate(-3deg)}
+.pic{position:relative;aspect-ratio:4/5;overflow:hidden}
+.pola figcaption{padding:.7rem .2rem 1rem;font-family:"Kalam","Mukta",sans-serif;font-size:1.35rem;line-height:1.25;font-weight:700}
+.pola small{display:block;font-family:"Mukta",sans-serif;font-weight:600;font-size:.8rem;color:var(--green)}
+.fog{background:linear-gradient(#f2b98c,#f8e4cf 55%,#c9d3cf)}
+.fog::before{content:"";position:absolute;width:46%;aspect-ratio:1;border-radius:50%;left:27%;top:22%;background:radial-gradient(#fff8e6 20%,#ffd49a 60%,transparent 72%)}
+.fog::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,#b9c4c0)}
+.night{background:linear-gradient(#0e1330,#26305e)}
+.night::before{content:"";position:absolute;inset:34% 8% 22%;border-radius:10px;background:repeating-linear-gradient(90deg,#f7c600 0 18%,#0e1330 18% 22%);opacity:.9}
+.night::after{content:"";position:absolute;inset:auto 0 0;height:14%;background:var(--m-blue)}
+.dusk{background:linear-gradient(#5b2a86,#e8579a 45%,#ffb347 80%)}
+.dusk svg{position:absolute;inset:auto 0 0;width:100%;color:#2a0f20}
+.dusk::before{content:"";position:absolute;width:30%;aspect-ratio:1;border-radius:50%;left:35%;top:30%;background:#fff3c4}
+.love{background:var(--ink);text-align:center;padding:clamp(3rem,7vw,5rem) 1.2rem}
+.love p{max-width:34rem;margin:0 auto;font-family:"Kalam","Mukta",sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.3rem);line-height:1.4}
+.love em{color:var(--m-yellow);font-style:normal}
+
 footer{background:var(--deep);padding:0 1rem 2.5rem;text-align:center}
 .gate{display:block;width:min(420px,80%);margin:0 auto;color:var(--red);filter:drop-shadow(0 0 0 #000)}
 .skyline{background:var(--pink);padding-top:2.2rem}
@@ -136,13 +168,14 @@ footer a{font-weight:600}
   <div class="bk" style="--r:-5deg;--d:.45s;bottom:0;left:5%" aria-hidden="true"><span class="mk">दिल वालों की</span><span class="disp" lang="hi">दिल्ली</span><span class="url">frames.delhiadda.xyz</span></div>
   <div class="bk" style="--r:6deg;--d:.55s;bottom:-2%;right:5%" aria-hidden="true"><span class="mk">Click karo</span><span class="disp" lang="hi">फ्रेम</span><span class="url">frames.delhiadda.xyz</span></div>
 
-  <div class="pk main">
+  <div class="pk main"><div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="rec" aria-hidden="true">REC · DILLI</div>
     <div class="mark">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e3120b"/><path d="M32 50 14 32a10 10 0 0 1 18-8 10 10 0 0 1 18 8z" fill="#fff"/></svg>
       <span class="disp">Frames in Delhi</span>
     </div>
     <span class="tag">Dilli ko dekho, apne nazariye se</span>
     <h1 class="disp" lang="hi">आपकी दिल्ली,<br>आपका फ्रेम</h1>
+    <p class="poem" id="poem" lang="hi">वो चाय जो ठंडी हो गई, पर बातें नहीं।</p>
     <p>Photos of Delhi, taken by the people who live in it. Send yours and we’ll feature it with your name.</p>
     <a class="btn" href="https://ig.me/m/framesindelhi">Send your frame</a><br>
     <span class="horn" lang="hi">हॉर्न OK प्लीज़ 📸</span>
@@ -155,6 +188,19 @@ footer a{font-weight:600}
     <span lang="hi">चांदनी चौक</span><b>★</b><span lang="hi">कनॉट प्लेस</span><b>★</b><span lang="hi">हौज़ ख़ास</span><b>★</b><span lang="hi">लाजपत नगर</span><b>★</b><span lang="hi">सरोजिनी</span><b>★</b><span lang="hi">करोल बाग</span><b>★</b><span lang="hi">मजनूं का टीला</span><b>★</b><span lang="hi">निज़ामुद्दीन</span><b>★</b><span lang="hi">इंडिया गेट</span><b>★</b><span lang="hi">दरियागंज</span><b>★</b>
   </div>
 </div>
+
+<section>
+  <h2 class="disp" lang="hi">ऐसे दिखते हैं फ्रेम</h2>
+  <div class="gallery">
+    <figure class="pola" style="--r:-3deg"><div class="pic fog"></div><figcaption lang="hi">सर्दी की सुबह, 6:40<small>photo by you · credit always</small></figcaption></figure>
+    <figure class="pola" style="--r:2deg"><div class="pic night"></div><figcaption lang="hi">आख़िरी मेट्रो, पहली याद<small>photo by you · credit always</small></figcaption></figure>
+    <figure class="pola" style="--r:-1.5deg"><div class="pic dusk"><svg viewBox="0 0 120 40" aria-hidden="true"><path fill="currentColor" d="M0 40V34h30v-3h8V20h44v11h8v3h30v6zM50 20a10 10 0 0 1 20 0z"/></svg></div><figcaption lang="hi">शाम, इंडिया गेट, और तुम<small>photo by you · credit always</small></figcaption></figure>
+  </div>
+</section>
+
+<section class="love">
+  <p lang="hi">दिल्ली सिर्फ़ शहर नहीं, <em>एक एहसास</em> है।<br>तुमने जो देखा, वो किसी और ने नहीं देखा।</p>
+</section>
 
 <section id="how">
   <h2 class="disp" lang="hi">भेजना आसान है, यार</h2>
@@ -228,10 +274,17 @@ footer a{font-weight:600}
     <svg viewBox="0 0 64 64" aria-hidden="true" style="width:34px;height:34px"><rect width="64" height="64" rx="14" fill="#e3120b"/><path d="M32 50 14 32a10 10 0 0 1 18-8 10 10 0 0 1 18 8z" fill="#fff"/></svg>
     <span class="disp" style="font-size:1.5rem;color:var(--red)">Frames in Delhi</span>
   </div>
-  <p lang="hi">दिल्ली से, दिल्ली के लिए </p>
+  <p lang="hi">दिल्ली से, दिल्ली के लिए ❤️</p>
   <p>A <a href="https://delhiadda.xyz">Delhi Adda</a> initiative.</p>
   <p><a href="https://instagram.com/framesindelhi">Instagram</a> &nbsp;|&nbsp; <a href="mailto:delhiekada@gmail.com">delhiekada@gmail.com</a></p>
 </footer>
 
+<script>
+(function(){
+var l=["वो चाय जो ठंडी हो गई, पर बातें नहीं।","कोहरे में खोई सड़कें, और हम।","आख़िरी मेट्रो, खिड़की वाली सीट।","हर गली की अपनी एक कहानी है।","दिल्ली, तुमसे इश्क़ है।"],i=0,e=document.getElementById("poem");
+if(!e||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+setInterval(function(){e.classList.add("out");setTimeout(function(){i=(i+1)%l.length;e.textContent=l[i];e.classList.remove("out")},600)},3800)
+})();
+</script>
 </body>
 </html>
