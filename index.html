@@ -19,7 +19,7 @@
   --blue:#0b0bd6;--grid:rgba(0,0,0,.28);--orange:#f2a93b;--red:#e3120b;--ink:#0a0a14;
   --sky:#7fd6e6;--train:#3b7fd6;--yellow:#fff03a;--cream:#f4efe6;--violet:#7b3fa0;--green:#2f8f4e;--pink:#ff6fa8;
   /* Yatra One = loud English display · Single Day = all other English text · Tillana = every Devanagari word + love notes */
-  --yatra:"Yatra One",Impact,sans-serif;
+  --yatra:"Yatra One","Khand",Impact,sans-serif;
   --khand:"Single Day","Tillana","Noto Sans Devanagari",sans-serif;
   --tl:"Tillana","Noto Sans Devanagari",sans-serif;
   --mono:"Space Mono",ui-monospace,monospace;
@@ -43,4 +43,472 @@ a{color:inherit}
 
 /* display type */
 .xt{font-family:var(--yatra);font-weight:400;color:var(--orange);line-height:1.05;margin:0;-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;text-shadow:var(--ex)}
-.xt[lang=hi]{font-family:var(--tl);fon
+.xt[lang=hi]{font-family:var(--tl);font-weight:800;line-height:1.15}
+.cta{display:inline-block;background:var(--orange);color:var(--ink);font-family:var(--khand);font-weight:400;font-size:1.35rem;text-decoration:none;padding:.7rem 1.5rem;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);text-transform:uppercase;letter-spacing:.05em;transition:transform .12s,box-shadow .12s}
+.cta:hover{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.cta.red{background:var(--red);color:#fff}
+.cta.dark{background:var(--ink);color:var(--orange);box-shadow:6px 6px 0 var(--red)}
+.cta.dark:hover{box-shadow:2px 2px 0 var(--red)}
+
+/* top strip */
+.strip{display:flex;justify-content:space-between;gap:1rem;background:var(--red);color:var(--ink);padding:.4rem 1.25rem;font-weight:700;font-size:1rem;letter-spacing:.05em;text-transform:uppercase}
+.strip span:last-child{color:var(--yellow);background:var(--ink);padding:0 .5rem}
+.lines{display:flex;height:10px}.lines i{flex:1}
+.lines i:nth-child(1){background:var(--ink)}.lines i:nth-child(2){background:#f7c600}.lines i:nth-child(3){background:var(--train)}.lines i:nth-child(4){background:var(--green)}.lines i:nth-child(5){background:var(--violet)}.lines i:nth-child(6){background:var(--pink)}.lines i:nth-child(7){background:#fff}
+
+/* floating hearts */
+.hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.hearts span{position:absolute;bottom:-12%;left:var(--x);font-size:var(--s);color:var(--c);opacity:0;animation:rise var(--t) linear var(--d) infinite;text-shadow:2px 2px 0 var(--ink)}
+@keyframes rise{0%{transform:translateY(0) rotate(-12deg);opacity:0}12%{opacity:.9}100%{transform:translateY(-115vh) rotate(14deg);opacity:0}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.18)}}
+.beat{display:inline-block;color:var(--red);animation:beat 1.4s ease-in-out infinite;text-shadow:2px 2px 0 var(--ink)}
+
+/* COVER */
+.cover{min-height:94vh;display:grid;place-items:center;padding:clamp(5rem,10vw,7rem) 0 6rem;text-align:center}
+.lockup{position:relative;z-index:2}
+.kicker{display:inline-block;background:var(--ink);color:var(--orange);padding:.3rem .9rem;font-family:var(--tl);font-weight:600;font-size:1.1rem;margin-bottom:1.2rem;transform:rotate(-1.5deg)}
+.big-hi{font-size:clamp(6.5rem,26vw,19rem);transform:rotate(-4deg);display:block;text-shadow:var(--ex),10px 10px 0 var(--ink),12px 12px 0 var(--ink)}
+.big-en{display:inline-block;margin-top:1.2rem;background:var(--orange);color:var(--ink);font-family:var(--yatra);font-size:clamp(1.3rem,4.4vw,2.4rem);letter-spacing:.1em;text-transform:uppercase;padding:.2rem 1.1rem;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transform:rotate(1.5deg)}
+.quote{font-family:var(--tl);font-weight:700;font-size:clamp(1.7rem,4.6vw,2.6rem);margin:1.6rem 0 .2rem;line-height:1.2;color:#fff;text-shadow:3px 3px 0 var(--ink)}
+.poem{min-height:2.7em;font-family:var(--tl);font-weight:600;font-size:1.5rem;line-height:1.35;margin:0 0 1rem;transition:opacity .6s;color:var(--yellow)}
+.poem.out{opacity:0}
+.sub{max-width:34rem;margin:0 auto;font-size:1.3rem}
+.enter{position:absolute;right:1.25rem;bottom:1.4rem;z-index:3}
+.enter::after{content:" ↓";display:inline-block;animation:bob 1.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+.fl{position:absolute;z-index:1}
+.roundel{position:relative;width:clamp(110px,18vw,200px);aspect-ratio:1;border-radius:50%;border:clamp(14px,2.4vw,24px) solid var(--red)}
+.roundel::after{content:"FRAMES";position:absolute;left:-26%;right:-26%;top:50%;transform:translateY(-50%);height:34%;background:var(--ink);color:var(--orange);font-family:var(--yatra);font-size:clamp(.9rem,2.2vw,1.6rem);letter-spacing:.1em;display:grid;place-items:center;border-block:4px solid #fff;text-shadow:2px 2px 0 var(--blue)}
+.sticker{width:clamp(110px,14vw,160px);aspect-ratio:1;border-radius:50%;background:var(--yellow);color:var(--ink);border:3px dashed var(--ink);display:grid;place-items:center;text-align:center;font-family:var(--khand);font-weight:700;font-size:.9rem;line-height:1.1;transform:rotate(-12deg);box-shadow:5px 5px 0 var(--ink);padding:.6rem}
+.sticker b{display:block;font-family:var(--tl);font-size:1.5rem;line-height:1.1;color:var(--red)}
+
+/* vinyl */
+.disc{position:relative;width:100%;aspect-ratio:1;border-radius:50%;
+  background:conic-gradient(from 20deg,transparent 0 8%,rgba(255,255,255,.24) 12%,transparent 18% 50%,rgba(255,255,255,.2) 58%,transparent 64%),repeating-radial-gradient(circle,#141414 0 2px,#050505 2px 4px);box-shadow:0 18px 0 rgba(0,0,0,.4)}
+.disc .spin{position:absolute;inset:0;border-radius:50%;animation:spin 12s linear infinite;background:conic-gradient(from 0deg,transparent 0 10%,rgba(255,255,255,.14) 14%,transparent 20% 52%,rgba(255,255,255,.12) 60%,transparent 66%)}
+.disc .lab{position:absolute;inset:31%;border-radius:50%;background:linear-gradient(var(--red) 0 34%,var(--orange) 34%);color:var(--ink);text-align:center;box-shadow:0 0 0 4px var(--ink);container-type:inline-size}
+.disc .lab::after{content:"";position:absolute;left:46%;top:46%;width:8%;aspect-ratio:1;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px var(--ink)}
+.lab .t{position:absolute;top:8%;left:0;right:0;font-family:var(--khand);font-size:7cqw;font-weight:700;letter-spacing:.08em;color:#fff}
+.lab .a{position:absolute;top:30%;left:0;right:0;font-family:var(--tl);font-weight:800;font-size:24cqw;line-height:1.1}
+.lab .b{position:absolute;bottom:9%;left:0;right:0;font-family:var(--khand);font-size:6.5cqw;font-weight:700;letter-spacing:.06em}
+@keyframes spin{to{transform:rotate(360deg)}}
+.deck{position:relative;width:min(100%,470px);margin-inline:auto}
+.arm{position:absolute;right:-4%;top:-6%;width:44%;height:84%;pointer-events:none;transform-origin:88% 6%;transform:rotate(-14deg);transition:transform 1.6s cubic-bezier(.2,.8,.3,1)}
+.in .arm{transform:rotate(4deg)}
+.arm .pivot{position:absolute;right:2%;top:0;width:16%;aspect-ratio:1;border-radius:50%;background:radial-gradient(#ddd 30%,#777 32% 60%,#333 62%)}
+.arm .rod{position:absolute;right:9%;top:6%;width:3.2%;height:70%;background:linear-gradient(90deg,#fafafa,#8a8a8a);border-radius:4px;transform-origin:top;transform:rotate(14deg)}
+.arm .stylus{position:absolute;left:19%;top:73%;width:11%;height:10%;background:var(--ink);border:2px solid #777;transform:rotate(18deg)}
+
+/* ticker + outline */
+.ticker{background:var(--orange);color:var(--ink);overflow:hidden;white-space:nowrap;border-block:4px solid var(--ink)}
+.ticker div{display:inline-block;padding:.3rem 0;animation:run 40s linear infinite}
+.ticker span{font-family:var(--tl);font-weight:700;font-size:1.5rem;margin:0 1rem}
+.ticker b{color:var(--red)}
+.ticker.rev div{animation-direction:reverse}
+@keyframes run{to{transform:translateX(-50%)}}
+.outline{overflow:hidden;white-space:nowrap;padding:1rem 0}
+.outline div{display:inline-block;animation:run 30s linear infinite}
+.outline span{font-family:var(--yatra);font-size:clamp(4rem,14vw,10rem);line-height:1.1;color:transparent;-webkit-text-stroke:2px var(--orange);margin:0 1.5rem}
+.outline span.f{font-family:var(--tl);font-weight:800;color:var(--orange);-webkit-text-stroke:3px var(--ink);text-shadow:var(--ex)}
+
+/* paper */
+.paper{position:relative;background:var(--orange);color:var(--ink)}
+.paper::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+
+/* ticket */
+.tk-shadow{filter:drop-shadow(10px 10px 0 var(--ink));transform:rotate(-2deg);max-width:680px;margin-inline:auto}
+.tk{-webkit-mask:radial-gradient(circle 12px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle 12px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat}
+.tk-top{display:flex;justify-content:space-between;align-items:center;background:var(--red);color:#fff;padding:.5rem 1.2rem;font-weight:700;border-bottom:2px solid var(--ink);font-size:1.2rem}
+.tk-body{padding:1.4rem 1.6rem 1.3rem}
+.tk-title{font-family:var(--tl);font-weight:800;font-size:clamp(3rem,11vw,5rem);line-height:1.1;margin:.1rem 0 .8rem;color:var(--orange);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:4px 4px 0 var(--ink),6px 6px 0 var(--ink)}
+.tk-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-weight:700;font-size:1.4rem;text-transform:uppercase}
+.tk-row [lang=hi]{text-transform:none}
+.tk-line{margin:.2rem 0;font-weight:700;text-transform:uppercase;font-size:1.15rem}
+.tk-line em{font-style:normal;font-family:var(--tl);font-size:1.3rem;text-transform:none}
+.tk-fine{font-family:var(--mono);font-size:.6rem;line-height:1.4;margin:1rem 0;text-transform:uppercase}
+.tk-body p.msg{margin:0 0 1.2rem;max-width:30rem}
+.barcode{height:44px;margin-top:1.2rem;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 5px,#000 5px 6px,transparent 6px 10px,#000 10px 13px,transparent 13px 15px,#000 15px 16px,transparent 16px 20px)}
+.tk-stamp{position:absolute;right:1.4rem;bottom:5rem;z-index:3;border:4px solid var(--red);color:var(--red);padding:0 .7rem;font-family:var(--tl);font-weight:800;font-size:1.6rem;transform:rotate(-14deg);opacity:.85;mix-blend-mode:multiply}
+
+/* board */
+.head{margin-bottom:2.2rem}.head .label{display:block;margin-bottom:.8rem}
+.head h2{font-size:clamp(2.6rem,8vw,5.2rem)}
+.board{background:var(--orange);color:var(--ink);border:4px solid var(--ink);box-shadow:12px 12px 0 var(--ink)}
+.board-head{background:var(--red);color:var(--ink);padding:.6rem 1rem;font-weight:700;font-size:1.1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;text-transform:uppercase}
+.board-head [lang=hi]{text-transform:none}
+.live::before{content:"";display:inline-block;width:.6em;height:.6em;border-radius:50%;background:var(--ink);margin-right:.5em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.1}}
+.board table{width:100%;border-collapse:collapse}
+.board th{text-align:left;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;padding:.9rem 1rem .3rem;text-transform:uppercase}
+.board td{padding:.9rem 1rem;vertical-align:top;font-weight:700;font-size:1.05rem;text-transform:uppercase}
+.board td:first-child{font-family:var(--yatra);font-size:2.2rem;line-height:1;color:var(--red)}
+.board td small{display:block;font-weight:500;text-transform:none;font-size:1.1rem;margin-top:.1rem}
+.board td b{display:block;font-family:var(--tl);font-weight:800;font-size:1.9rem;text-transform:none;line-height:1.2}
+.board tr+tr td{border-top:2px dashed rgba(10,10,20,.35)}
+.train{height:190px;border-top:4px solid var(--ink);display:flex;flex-direction:column;overflow:hidden}
+.train .a{height:20%;background:var(--cream)}
+.train .b{height:30%;background:var(--train);position:relative}
+.train .b::after,.train .b i{content:"";position:absolute;left:12%;width:22%;top:30%;height:40%;background:var(--yellow)}
+.train .b i{left:66%}
+.train .c{height:30%;background:var(--sky)}
+.train .d{flex:1;background:var(--train)}
+.board-foot{padding:.8rem 1rem;background:var(--blue);color:var(--orange);font-size:1.05rem;border-top:4px solid var(--ink)}
+
+/* gallery */
+.play{display:grid;grid-template-columns:.95fr 1.05fr;gap:3rem;align-items:center}
+.np{display:inline-block;background:var(--yellow);color:var(--ink);font-family:var(--mono);font-weight:700;padding:.1rem .6rem;font-size:.75rem;letter-spacing:.1em;margin-bottom:1rem;border:2px solid var(--ink)}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.8rem}
+.frame{background:var(--ink);padding:.7rem;box-shadow:8px 8px 0 rgba(0,0,0,.5);position:relative;margin:0}
+.frame:nth-child(1){transform:rotate(-3deg)}
+.frame:nth-child(2){transform:rotate(2.5deg);margin-top:2rem}
+.frame:nth-child(3){transform:rotate(2deg);margin-top:-.6rem}
+.frame:nth-child(4){transform:rotate(-2.5deg);margin-top:1.2rem}
+.frame::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(255,240,58,.8);transform:rotate(-3deg);z-index:2}
+.frame .meta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.62rem;margin-bottom:.4rem;letter-spacing:.06em}
+.pic{position:relative;aspect-ratio:4/5;overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.frame figcaption{padding:.6rem .1rem .2rem;font-family:var(--tl);font-weight:600;font-size:1.3rem;line-height:1.25;color:#fff}
+.frame small{display:block;font-family:var(--mono);font-size:.6rem;color:var(--pink);text-transform:uppercase;letter-spacing:.05em;margin-top:.2rem}
+.fog{background:linear-gradient(#f2b98c,#f8e4cf 55%,#c9d3cf)}
+.fog::before{content:"";position:absolute;width:46%;aspect-ratio:1;border-radius:50%;left:27%;top:22%;background:radial-gradient(#fff8e6 20%,#ffd49a 60%,transparent 72%)}
+.night{background:linear-gradient(#0e1330,#26305e)}
+.night::before{content:"";position:absolute;inset:34% 8% 22%;border-radius:10px;background:repeating-linear-gradient(90deg,#f7c600 0 18%,#0e1330 18% 22%)}
+.night::after{content:"";position:absolute;inset:auto 0 0;height:14%;background:var(--train)}
+.dusk{background:linear-gradient(#5b2a86,#ff6fa8 45%,#ffb347 80%)}
+.dusk svg{position:absolute;inset:auto 0 0;width:100%;color:#2a0f20}
+.dusk::before{content:"";position:absolute;width:20%;aspect-ratio:1;border-radius:50%;left:40%;top:22%;background:#fff3c4}
+
+/* love letter */
+.letter-shadow{filter:drop-shadow(10px 10px 0 var(--ink));max-width:780px;margin-inline:auto;transform:rotate(1deg)}
+.letter{background:var(--cream);color:var(--ink);padding:clamp(2rem,6vw,3.4rem) clamp(1.4rem,6vw,3.4rem);position:relative;background-image:repeating-linear-gradient(transparent 0 2.6rem,rgba(11,11,214,.18) 2.6rem calc(2.6rem + 1px))}
+.letter::before{content:"♥";position:absolute;top:-1.1rem;right:2rem;font-size:3rem;color:var(--red);text-shadow:3px 3px 0 var(--ink);animation:beat 1.4s ease-in-out infinite}
+.letter h2{margin:0 0 1rem;font-family:var(--tl);font-weight:800;font-size:clamp(2.4rem,7vw,3.6rem);line-height:1.2;color:var(--red)}
+.letter p{margin:0 0 1rem;font-family:var(--tl);font-weight:500;font-size:clamp(1.25rem,3.4vw,1.55rem);line-height:2.6rem}
+.letter .sign{text-align:right;font-weight:700;color:var(--red);margin:0}
+
+/* route */
+.route{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.lede{max-width:30rem;margin:0 0 2rem;font-size:1.3rem}
+.stations{list-style:none;margin:0;padding:0 0 0 2.6rem}
+.stations li{position:relative;font-family:var(--tl);font-weight:700;font-size:clamp(1.6rem,4.2vw,2.2rem);line-height:1.2;padding:.4rem 0;color:var(--orange)}
+.stations li::before{content:"";position:absolute;left:-2.6rem;top:50%;width:1.1rem;height:1.1rem;transform:translate(.35rem,-50%);border-radius:50%;background:#fff;border:4px solid var(--ink);z-index:2}
+.stations li::after{content:"";position:absolute;left:-2.05rem;top:50%;height:100%;width:.45rem;background:var(--c,#f7c600);transform:translateX(-50%)}
+.stations li:last-child::after{display:none}
+.stations li:nth-child(6n+1){--c:#f7c600}.stations li:nth-child(6n+2){--c:var(--train)}.stations li:nth-child(6n+3){--c:var(--green)}.stations li:nth-child(6n+4){--c:var(--violet)}.stations li:nth-child(6n+5){--c:var(--pink)}.stations li:nth-child(6n){--c:#fff}
+.stations li:nth-child(odd){color:#fff}
+.stations li span{font-family:var(--mono);font-weight:400;font-size:.68rem;letter-spacing:.1em;color:var(--sky);margin-left:.8rem}
+
+/* bylaws */
+.torn-shadow{filter:drop-shadow(10px 10px 0 var(--ink));max-width:820px;margin-inline:auto;transform:rotate(.8deg)}
+.bylaws{clip-path:polygon(0 0,100% 0,100% 97.5%,96% 100%,92% 97.8%,88% 100%,83% 97.6%,79% 100%,74% 97.9%,70% 100%,65% 97.7%,60% 100%,56% 97.8%,51% 100%,46% 97.6%,41% 100%,36% 97.9%,31% 100%,26% 97.7%,21% 100%,16% 97.8%,11% 100%,6% 97.6%,2% 100%,0 98%)}
+.bylaws .bar{background:var(--red);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1.4rem;color:#fff;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:1.05rem}
+.bylaws .bar [lang=hi]{font-size:1.5rem;text-transform:none}
+.bylaws h2{margin:1.4rem 1.6rem 0;font-family:var(--yatra);font-weight:400;font-size:clamp(2rem,6vw,3.4rem);line-height:1;color:var(--orange);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:3px 3px 0 var(--ink)}
+.bylaws ol{list-style:none;margin:0;padding:1.1rem 1.6rem 1rem;counter-reset:r}
+.bylaws li{counter-increment:r;position:relative;padding:.7rem 0 .7rem 3.6rem;font-weight:700;font-size:1.2rem;border-bottom:2px dashed rgba(10,10,20,.35)}
+.bylaws li:last-child{border-bottom:0}
+.bylaws li::before{content:"0" counter(r);position:absolute;left:0;top:.6rem;font-family:var(--yatra);font-size:2rem;line-height:1;color:var(--red)}
+.bylaws .foot{padding:0 1.6rem 2.4rem;font-family:var(--mono);font-size:.68rem;text-transform:uppercase}
+
+/* cassette */
+.cassette{position:relative;width:100%;aspect-ratio:1.6;container-type:inline-size;border-radius:2.2cqw;background:linear-gradient(135deg,rgba(150,130,255,.55),rgba(90,70,230,.5));border:.5cqw solid rgba(255,255,255,.55);box-shadow:1.6cqw 1.6cqw 0 rgba(0,0,0,.45)}
+.c-label{position:absolute;left:5%;right:5%;top:7%;height:56%;background:var(--orange);overflow:hidden;color:var(--ink)}
+.c-label .t{position:absolute;right:3%;top:5%;font-family:var(--khand);font-size:2.6cqw;font-weight:700;letter-spacing:.05em;text-align:right;line-height:1.3}
+.c-label .h{position:absolute;left:3%;top:2%;font-family:var(--tl);font-weight:800;font-size:12cqw;line-height:1.15;color:var(--red);-webkit-text-stroke:.5cqw var(--ink);paint-order:stroke fill;text-shadow:.8cqw .8cqw 0 var(--ink)}
+.c-stripe{position:absolute;left:5%;right:5%;top:63%;height:14%;background:var(--train);border-block:.8cqw solid var(--cream)}
+.c-win{position:absolute;left:35%;width:30%;top:24%;height:36%;background:var(--ink);border-radius:1cqw;border:.6cqw solid rgba(255,255,255,.5);z-index:2}
+.reel{position:absolute;top:22%;width:19%;aspect-ratio:1;border-radius:50%;z-index:3;border:.8cqw solid rgba(255,255,255,.6);background:radial-gradient(circle,var(--blue) 0 28%,transparent 29%),conic-gradient(#fff 0 12%,#aab 12% 25%,#fff 25% 37%,#aab 37% 50%,#fff 50% 62%,#aab 62% 75%,#fff 75% 87%,#aab 87%);animation:spin 5s linear infinite}
+.reel.l{left:12%}.reel.r{left:69%}
+.c-bot{position:absolute;left:14%;right:14%;bottom:0;height:20%;background:rgba(255,255,255,.25);clip-path:polygon(7% 0,93% 0,100% 100%,0 100%)}
+.rel{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.rel .hd{font-size:clamp(2.6rem,8vw,5rem);margin:.6rem 0 1rem}
+.rel p{max-width:28rem;margin:0 0 1.6rem;font-size:1.3rem}
+.led{display:inline-block;background:#000;color:var(--yellow);font-family:var(--mono);font-weight:700;padding:.3rem .8rem;letter-spacing:.16em;font-size:.8rem;border:2px solid var(--yellow);animation:blink 1.4s steps(2) infinite}
+
+/* footer */
+footer{background:var(--ink);padding:3.5rem 0 3rem;border-top:6px solid var(--orange)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:2.5rem;align-items:center;justify-content:space-between}
+footer .roundel{width:120px;border-width:16px}
+footer .roundel::after{font-size:.8rem}
+footer p{margin:.2rem 0}
+footer .big{font-family:var(--tl);font-weight:800;font-size:2rem;line-height:1.2}
+footer a{font-weight:700}
+.track{position:fixed;left:0;right:0;bottom:0;height:14px;z-index:99;background:var(--ink);border-top:2px solid var(--orange)}
+.track i{position:absolute;bottom:2px;left:0;width:42px;height:9px;background:var(--orange);border:2px solid var(--ink);transform:translateX(-50%)}
+
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .play,.route,.rel{grid-template-columns:1fr}
+  .rel .cassette-col{order:-1}
+  .board th:nth-child(3),.board td:nth-child(3){display:none}
+  .hide-m,.enter{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .disc .spin,.reel,.ticker div,.outline div,.led,.enter::after,.live::before,.beat,.letter::before,.hearts span{animation:none}
+  .hearts{display:none}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .arm,.cta{transition:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+
+<div class="strip" aria-hidden="true"><span lang="hi">अगला स्टेशन: आपका फ्रेम <span class="beat" style="background:none;padding:0">♥</span></span><span>Next station: Your frame</span></div>
+<div class="lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- 01 COVER -->
+<header class="slide cover">
+  <div class="tag" aria-hidden="true"><span><b>[01/09]</b> Cover</span><span>Dilli · 2026</span></div>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <div class="fl" style="top:6%;right:2%" aria-hidden="true"><div class="roundel"></div></div>
+  <div class="fl hide-m" style="bottom:7%;left:3%" aria-hidden="true"><div class="sticker"><div><b lang="hi">दिल से दिल्ली</b>Credit always given</div></div></div>
+  <div class="fl" style="bottom:-12%;right:-14%;width:clamp(240px,40vw,560px)" aria-hidden="true">
+    <div class="disc"><div class="spin"></div><div class="lab"><span class="t">FRAMES IN DELHI</span><span class="a" lang="hi">फ्रेम</span><span class="b">SIDE A · DILLI</span></div></div>
+  </div>
+
+  <div class="wrap lockup">
+    <span class="kicker" lang="hi">दिल्ली को देखो, अपनी नज़र से</span>
+    <h1 class="xt big-hi" lang="hi" aria-label="Frames in Delhi">फ्रेम</h1>
+    <span class="big-en">Frames in Delhi</span>
+    <p class="quote" lang="hi">आपकी दिल्ली, आपका फ्रेम।</p>
+    <p class="poem" id="poem" lang="hi">वो चाय जो ठंडी हो गई, पर बातें नहीं।</p>
+    <p class="sub">Photos of Delhi, taken by the people who live in it. Send yours and we’ll feature it with your name.</p>
+    <p style="margin-top:1.6rem"><a class="cta" href="https://ig.me/m/framesindelhi">Send your frame <span class="beat">♥</span></a></p>
+  </div>
+  <span class="enter label" lang="hi">[ स्क्रॉल करो ]</span>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div>
+    <span lang="hi">चांदनी चौक</span><b>♥</b><span lang="hi">कनॉट प्लेस</span><b>♥</b><span lang="hi">हौज़ ख़ास</span><b>♥</b><span lang="hi">लाजपत नगर</span><b>♥</b><span lang="hi">सरोजिनी</span><b>♥</b><span lang="hi">करोल बाग</span><b>♥</b><span lang="hi">मजनूं का टीला</span><b>♥</b><span lang="hi">निज़ामुद्दीन</span><b>♥</b><span lang="hi">इंडिया गेट</span><b>♥</b><span lang="hi">दरियागंज</span><b>♥</b>
+    <span lang="hi">चांदनी चौक</span><b>♥</b><span lang="hi">कनॉट प्लेस</span><b>♥</b><span lang="hi">हौज़ ख़ास</span><b>♥</b><span lang="hi">लाजपत नगर</span><b>♥</b><span lang="hi">सरोजिनी</span><b>♥</b><span lang="hi">करोल बाग</span><b>♥</b><span lang="hi">मजनूं का टीला</span><b>♥</b><span lang="hi">निज़ामुद्दीन</span><b>♥</b><span lang="hi">इंडिया गेट</span><b>♥</b><span lang="hi">दरियागंज</span><b>♥</b>
+  </div>
+</div>
+
+<!-- 02 LOVE LETTER -->
+<section class="slide" id="letter">
+  <div class="tag" aria-hidden="true"><span><b>[02/09]</b> Love letter</span><span>Dilli ke naam</span></div>
+  <div class="wrap rv">
+    <div class="letter-shadow">
+      <article class="letter" lang="hi">
+        <h2>प्रिय दिल्ली,</h2>
+        <p>तुम्हारी सुबह की धुंध में हमने पहली बार चाय पी थी। तुम्हारी आख़िरी मेट्रो में हमने खिड़की वाली सीट ढूँढी, और तुम्हारी गलियों में खो जाना भी सीखा।</p>
+        <p>तुम्हें हर कोई अपनी नज़र से देखता है, और हर नज़र में तुम थोड़ी और सुंदर लगती हो। इसीलिए हम तुम्हारी तस्वीरें इकट्ठा कर रहे हैं, उन लोगों से जो तुमसे सच में प्यार करते हैं।</p>
+        <p class="sign">तुम्हारे अपने, फ्रेम्स इन दिल्ली ♥</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 TICKET -->
+<section class="slide" id="ticket">
+  <div class="tag" aria-hidden="true"><span><b>[03/09]</b> Ticket</span><span>UTS 0987654</span></div>
+  <div class="wrap rv">
+    <div class="tk-shadow">
+      <div class="paper tk">
+        <div class="tk-top"><span lang="hi">शुभ यात्रा / HAPPY JOURNEY</span><span>N 0987654</span></div>
+        <div class="tk-body">
+          <div class="tk-title" lang="hi">फ्रेम टिकट</div>
+          <div class="tk-row"><span lang="hi">आपकी दिल्ली</span><span lang="hi">आपका फ्रेम</span></div>
+          <div class="tk-line">Entry log → to your frame</div>
+          <div class="tk-line">Via:- <em lang="hi">नज़र</em></div>
+          <div class="tk-line">Passenger:- you + your phone</div>
+          <div class="tk-line">Journey date:- <em lang="hi">आज ही</em></div>
+          <div class="tk-row tk-line"><span>UTS:- 0987654</span><span>Rs:- <em lang="hi">मुफ़्त, दिल से</em></span></div>
+          <p class="tk-fine">[REF: FID_2026] // Zonal allocation: Delhi_Grid // Printed at: Delhi Adda // Credit always given</p>
+          <p class="msg">Send your best Delhi photo. We feature our favourites with your name on them.</p>
+          <a class="cta dark" href="https://ig.me/m/framesindelhi">Send your frame →</a>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+        <div class="tk-stamp" aria-hidden="true">♥ पास</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 BOARD -->
+<section class="slide" id="how">
+  <div class="tag" aria-hidden="true"><span><b>[04/09]</b> Track display</span><span>CRT_011</span></div>
+  <div class="wrap">
+    <div class="head rv">
+      <span class="label"><b>[</b> Track display monitor: FID_01 <b>]</b></span>
+      <h2 class="xt" lang="hi">भेजना आसान है, यार</h2>
+    </div>
+    <div class="board rv">
+      <div class="board-head"><span>Delhi Frames Archive //</span><span lang="hi">नई दिल्ली जंक्शन</span><span class="live">Signal: active</span></div>
+      <table>
+        <thead><tr><th>Trk</th><th>Step</th><th>Platform</th></tr></thead>
+        <tbody>
+          <tr><td>01</td><td><b lang="hi">फोटो भेजो</b><small>DM your best Delhi photo to <strong>@framesindelhi</strong> on Instagram.</small></td><td>PF 01 [Instagram DM]</td></tr>
+          <tr><td>02</td><td><b lang="hi">नाम बताओ</b><small>Add your name and where you took it, so we can credit you properly.</small></td><td>PF 02 [Credit line]</td></tr>
+          <tr><td>03</td><td><b lang="hi">फ़ीचर होगा</b><small>We post our favourites on the page, tagged to you.</small></td><td>PF 03 [On the page]</td></tr>
+        </tbody>
+      </table>
+      <div class="train" aria-hidden="true"><div class="a"></div><div class="b"><i></i></div><div class="c"></div><div class="d"></div></div>
+      <div class="board-foot"><span lang="hi">“यात्रीगण कृपया ध्यान दें…”</span> Attention passengers: your photo is the next arrival.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 GALLERY -->
+<section class="slide" id="gallery">
+  <div class="tag" aria-hidden="true"><span><b>[05/09]</b> Now playing</span><span>Side A</span></div>
+  <div class="wrap">
+    <div class="play">
+      <div class="deck rv" aria-hidden="true">
+        <div class="disc"><div class="spin"></div><div class="lab"><span class="t">NOW PLAYING</span><span class="a" lang="hi">फ्रेम</span><span class="b">FRAMES IN DELHI</span></div></div>
+        <div class="arm"><div class="rod"></div><div class="pivot"></div><div class="stylus"></div></div>
+      </div>
+      <div class="rv">
+        <span class="np">▶ NOW PLAYING</span>
+        <h2 class="xt" style="font-size:clamp(2.6rem,7vw,4.4rem)" lang="hi">ऐसे दिखते हैं फ्रेम</h2>
+        <div class="collage">
+          <figure class="frame"><div class="meta"><span>FRAME 001</span><span>OLD DELHI</span></div><div class="pic"><img src="images/jama-lane.jpg" alt="A crowded Old Delhi lane under tangled wires, with the dome of Jama Masjid at the far end" loading="lazy"></div><figcaption lang="hi">गली के आख़िर में जामा मस्जिद<small>photo: your name ♥ credit always</small></figcaption></figure>
+          <figure class="frame"><div class="meta"><span>FRAME 002</span><span>JAMA MASJID</span></div><div class="pic"><img src="images/jama-minarets.jpg" alt="Jama Masjid minarets rising behind a green and yellow auto-rickshaw" loading="lazy"></div><figcaption lang="hi">ऑटो, मीनार और नीला आसमान<small>photo: your name ♥ credit always</small></figcaption></figure>
+          <figure class="frame"><div class="meta"><span>FRAME 003</span><span>LAL QILA</span></div><div class="pic"><img src="images/red-fort.jpg" alt="The Red Fort walls and flag seen over yellow police barricades" loading="lazy"></div><figcaption lang="hi">लाल क़िले की धुंधली सुबह<small>photo: your name ♥ credit always</small></figcaption></figure>
+          <figure class="frame"><div class="meta"><span>FRAME 004</span><span>INDIA GATE</span></div><div class="pic"><img src="images/india-gate.jpg" alt="India Gate under a deep blue sky with people on the lawn" loading="lazy"></div><figcaption lang="hi">इंडिया गेट, और सब अपने<small>photo: your name ♥ credit always</small></figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 ROUTE -->
+<section class="slide" id="where">
+  <div class="tag" aria-hidden="true"><span><b>[06/09]</b> Route map</span><span>Every line</span></div>
+  <div class="wrap">
+    <div class="route">
+      <div class="rv">
+        <span class="label"><b>[</b> Stations on the line <b>]</b></span>
+        <h2 class="xt" style="font-size:clamp(2.8rem,8vw,5.2rem);margin:.8rem 0 1.4rem" lang="hi">किस गली से?</h2>
+        <p class="lede">Every corner counts. From a Chandni Chowk lane to a Gurgaon-border flyover, if it’s Delhi, it belongs here.</p>
+        <div class="sticker hide-m" aria-hidden="true" style="margin-top:2rem"><div><b lang="hi">हर कोना प्यारा</b>Every corner counts</div></div>
+      </div>
+      <ol class="stations rv" lang="hi">
+        <li>चाय की टपरी<span>STN 01</span></li>
+        <li>मेट्रो प्लेटफ़ॉर्म<span>STN 02</span></li>
+        <li>पुरानी दिल्ली की गली<span>STN 03</span></li>
+        <li>लोधी गार्डन<span>STN 04</span></li>
+        <li>कमला नगर<span>STN 05</span></li>
+        <li>यमुना घाट<span>STN 06</span></li>
+        <li>सर्दी की धुंध<span>STN 07</span></li>
+        <li>ऑटो की सवारी<span>STN 08</span></li>
+        <li>गोलगप्पे वाला<span>STN 09</span></li>
+        <li>किताबों का बाज़ार<span>STN 10</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 07 BYLAWS -->
+<section class="slide" id="rules">
+  <div class="tag" aria-hidden="true"><span><b>[07/09]</b> Bylaws</span><span>Audit copy</span></div>
+  <div class="wrap rv">
+    <div class="torn-shadow">
+      <div class="paper bylaws">
+        <div class="bar"><span>[Transit bylaws] // Frames in Delhi guidelines</span><span lang="hi">नियम</span></div>
+        <h2>Before you send</h2>
+        <ol>
+          <li>Send only photos you took yourself.</li>
+          <li>One to three photos per message is plenty.</li>
+          <li>Wide street scenes are great. Please skip close-ups of strangers’ faces.</li>
+          <li>Featured photos may be reposted on Frames in Delhi and Delhi Adda, always with your credit.</li>
+          <li>Changed your mind? Message us and we’ll take it down.</li>
+        </ol>
+        <div class="foot">No cancellations needed. Just message us.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 CONTEST -->
+<section class="slide" id="soon">
+  <div class="tag" aria-hidden="true"><span><b>[08/09]</b> Next release</span><span>Side B</span></div>
+  <div class="wrap">
+    <div class="rel">
+      <div class="rv">
+        <span class="led">● COMING SOON</span>
+        <h2 class="xt hd" lang="hi">फ्रेम कॉन्टेस्ट</h2>
+        <p>A judged photo contest is on its way. Follow the page to hear first.</p>
+        <a class="cta red" href="https://instagram.com/framesindelhi">Follow @framesindelhi</a>
+      </div>
+      <div class="cassette-col rv" aria-hidden="true" style="transform:rotate(-5deg)">
+        <div class="cassette">
+          <div class="c-label"><span class="h" lang="hi">फ्रेम</span><span class="t">FRAMES IN DELHI // CONTEST<br>[SIDE B] [STEREO]</span></div>
+          <div class="c-stripe"></div><div class="c-win"></div><i class="reel l"></i><i class="reel r"></i><div class="c-bot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 OUTRO -->
+<div class="outline" aria-hidden="true">
+  <div>
+    <span>FRAMES IN DELHI</span><span class="f" lang="hi">आपकी दिल्ली</span><span>FRAMES IN DELHI</span><span class="f" lang="hi">आपका फ्रेम</span>
+    <span>FRAMES IN DELHI</span><span class="f" lang="hi">आपकी दिल्ली</span><span>FRAMES IN DELHI</span><span class="f" lang="hi">आपका फ्रेम</span>
+  </div>
+</div>
+<div class="ticker rev" aria-hidden="true">
+  <div>
+    <span lang="hi">दिल्ली से, दिल्ली के लिए</span><b>♥</b><span>Send your frame</span><b>♥</b><span lang="hi">फ्रेम भेजो</span><b>♥</b><span>Credit always</span><b>♥</b>
+    <span lang="hi">दिल्ली से, दिल्ली के लिए</span><b>♥</b><span>Send your frame</span><b>♥</b><span lang="hi">फ्रेम भेजो</span><b>♥</b><span>Credit always</span><b>♥</b>
+    <span lang="hi">दिल्ली से, दिल्ली के लिए</span><b>♥</b><span>Send your frame</span><b>♥</b><span lang="hi">फ्रेम भेजो</span><b>♥</b><span>Credit always</span><b>♥</b>
+    <span lang="hi">दिल्ली से, दिल्ली के लिए</span><b>♥</b><span>Send your frame</span><b>♥</b><span lang="hi">फ्रेम भेजो</span><b>♥</b><span>Credit always</span><b>♥</b>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="roundel" aria-hidden="true"></div>
+    <div>
+      <p class="big" lang="hi">दिल्ली से, दिल्ली के लिए <span class="beat">♥</span></p>
+      <p>Frames in Delhi, a <a href="https://delhiadda.xyz">Delhi Adda</a> initiative.</p>
+      <p><a href="https://instagram.com/framesindelhi">Instagram</a> &nbsp;|&nbsp; <a href="mailto:delhiekada@gmail.com">delhiekada@gmail.com</a></p>
+    </div>
+    <a class="cta" href="https://ig.me/m/framesindelhi">Send your frame <span class="beat">♥</span></a>
+  </div>
+</footer>
+
+<div class="track" aria-hidden="true"><i id="train"></i></div>
+
+<script>
+(function(){
+  var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  /* rising hearts in the cover */
+  var hs=document.getElementById("hearts"),cols=["#e3120b","#ff6fa8","#fff03a","#f2a93b"],h="";
+  for(var k=0;k<16;k++){h+='<span style="--x:'+(Math.random()*96)+'%;--s:'+(18+Math.random()*34)+'px;--c:'+cols[k%4]+';--t:'+(9+Math.random()*9)+'s;--d:-'+(Math.random()*14)+'s">♥</span>'}
+  hs.innerHTML=h;
+
+  /* reveal on scroll: three safety nets so content never stays hidden */
+  var items=[].slice.call(document.querySelectorAll(".rv"));
+  function show(el){el.classList.add("in")}
+  function check(){items.forEach(function(el){if(el.getBoundingClientRect().top<innerHeight*0.95)show(el)})}
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.01});
+    items.forEach(function(el){io.observe(el)});
+  }
+  addEventListener("scroll",check,{passive:true});addEventListener("resize",check);addEventListener("load",check);
+  check();
+  setTimeout(function(){items.forEach(show)},2500);
+
+  /* rail progress */
+  var tr=document.getElementById("train"),tick=false;
+  function upd(){var h=document.documentElement.scrollHeight-innerHeight;tr.style.left=(h>0?scrollY/h*100:0)+"%";tick=false}
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+  upd();
+
+  /* rotating poem */
+  var l=["वो चाय जो ठंडी हो गई, पर बातें नहीं।","कोहरे में खोई सड़कें, और हम।","आख़िरी मेट्रो, खिड़की वाली सीट।","हर गली की अपनी एक कहानी है।","दिल्ली, तुमसे इश्क़ है।"],i=0,e=document.getElementById("poem");
+  if(!e||reduce)return;
+  setInterval(function(){e.classList.add("out");setTimeout(function(){i=(i+1)%l.length;e.textContent=l[i];e.classList.remove("out")},600)},3800);
+})();
+</script>
+</body>
+</html>
