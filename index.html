@@ -13,21 +13,21 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0bd6'/%3E%3Cpath d='M32 52 12 32a11 11 0 0 1 20-8 11 11 0 0 1 20 8z' fill='%23e3120b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Khand:wght@500;600;700&family=Tillana:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Single+Day&family=Tillana:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#0b0bd6;--grid:rgba(0,0,0,.28);--orange:#f2a93b;--red:#e3120b;--ink:#0a0a14;
   --sky:#7fd6e6;--train:#3b7fd6;--yellow:#fff03a;--cream:#f4efe6;--violet:#7b3fa0;--green:#2f8f4e;--pink:#ff6fa8;
-  /* Yatra One = loud English display · Khand = body, labels, buttons · Tillana = every Devanagari word + love notes */
+  /* Yatra One = loud English display · Single Day = all other English text · Tillana = every Devanagari word + love notes */
   --yatra:"Yatra One","Khand",Impact,sans-serif;
-  --khand:"Khand","Tillana","Noto Sans Devanagari",sans-serif;
+  --khand:"Single Day","Tillana","Noto Sans Devanagari",sans-serif;
   --tl:"Tillana","Noto Sans Devanagari",sans-serif;
   --mono:"Space Mono",ui-monospace,monospace;
   --ex:1px 1px 0 var(--ink),2px 2px 0 var(--ink),3px 3px 0 var(--ink),4px 4px 0 var(--ink),5px 5px 0 var(--ink),6px 6px 0 var(--ink),7px 7px 0 var(--ink);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;color:var(--orange);font-family:var(--khand);font-weight:500;font-size:1.2rem;line-height:1.5;overflow-x:hidden;padding-bottom:18px;
+html{scroll-behavior:smooth;font-synthesis:none}
+body{margin:0;color:var(--orange);font-family:var(--khand);font-weight:400;font-size:1.3rem;line-height:1.5;overflow-x:hidden;padding-bottom:18px;
   background-color:var(--blue);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
 body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -44,7 +44,7 @@ a{color:inherit}
 /* display type */
 .xt{font-family:var(--yatra);font-weight:400;color:var(--orange);line-height:1.05;margin:0;-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;text-shadow:var(--ex)}
 .xt[lang=hi]{font-family:var(--tl);font-weight:800;line-height:1.15}
-.cta{display:inline-block;background:var(--orange);color:var(--ink);font-family:var(--khand);font-weight:700;font-size:1.25rem;text-decoration:none;padding:.7rem 1.5rem;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);text-transform:uppercase;letter-spacing:.05em;transition:transform .12s,box-shadow .12s}
+.cta{display:inline-block;background:var(--orange);color:var(--ink);font-family:var(--khand);font-weight:400;font-size:1.35rem;text-decoration:none;padding:.7rem 1.5rem;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);text-transform:uppercase;letter-spacing:.05em;transition:transform .12s,box-shadow .12s}
 .cta:hover{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
 .cta.red{background:var(--red);color:#fff}
 .cta.dark{background:var(--ink);color:var(--orange);box-shadow:6px 6px 0 var(--red)}
@@ -162,12 +162,13 @@ a{color:inherit}
 .frame{background:var(--ink);padding:.7rem;box-shadow:8px 8px 0 rgba(0,0,0,.5);position:relative;margin:0}
 .frame:nth-child(1){transform:rotate(-3deg)}
 .frame:nth-child(2){transform:rotate(2.5deg);margin-top:2rem}
-.frame:nth-child(3){transform:rotate(-1.5deg);grid-column:1/-1;max-width:62%;margin-inline:auto}
+.frame:nth-child(3){transform:rotate(2deg);margin-top:-.6rem}
+.frame:nth-child(4){transform:rotate(-2.5deg);margin-top:1.2rem}
 .frame::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(255,240,58,.8);transform:rotate(-3deg);z-index:2}
 .frame .meta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.62rem;margin-bottom:.4rem;letter-spacing:.06em}
 .pic{position:relative;aspect-ratio:4/5;overflow:hidden}
-.frame:nth-child(3) .pic{aspect-ratio:16/10}
-.frame figcaption{padding:.5rem .1rem 0;font-family:var(--tl);font-weight:600;font-size:1.3rem;line-height:1.25;color:#fff}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.frame figcaption{padding:.6rem .1rem .2rem;font-family:var(--tl);font-weight:600;font-size:1.3rem;line-height:1.25;color:#fff}
 .frame small{display:block;font-family:var(--mono);font-size:.6rem;color:var(--pink);text-transform:uppercase;letter-spacing:.05em;margin-top:.2rem}
 .fog{background:linear-gradient(#f2b98c,#f8e4cf 55%,#c9d3cf)}
 .fog::before{content:"";position:absolute;width:46%;aspect-ratio:1;border-radius:50%;left:27%;top:22%;background:radial-gradient(#fff8e6 20%,#ffd49a 60%,transparent 72%)}
@@ -244,7 +245,6 @@ footer a{font-weight:700}
   .rel .cassette-col{order:-1}
   .board th:nth-child(3),.board td:nth-child(3){display:none}
   .hide-m,.enter{display:none}
-  .frame:nth-child(3){max-width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   .disc .spin,.reel,.ticker div,.outline div,.led,.enter::after,.live::before,.beat,.letter::before,.hearts span{animation:none}
@@ -368,9 +368,10 @@ footer a{font-weight:700}
         <span class="np">▶ NOW PLAYING</span>
         <h2 class="xt" style="font-size:clamp(2.6rem,7vw,4.4rem)" lang="hi">ऐसे दिखते हैं फ्रेम</h2>
         <div class="collage">
-          <figure class="frame"><div class="meta"><span>FRAME 001</span><span>06:40</span></div><div class="pic fog"></div><figcaption lang="hi">सर्दी की सुबह, 6:40<small>photo by you · credit always ♥</small></figcaption></figure>
-          <figure class="frame"><div class="meta"><span>FRAME 002</span><span>23:55</span></div><div class="pic night"></div><figcaption lang="hi">आख़िरी मेट्रो, पहली याद<small>photo by you · credit always ♥</small></figcaption></figure>
-          <figure class="frame"><div class="meta"><span>FRAME 003</span><span>18:20</span></div><div class="pic dusk"><svg viewBox="0 0 120 40" aria-hidden="true"><path fill="currentColor" d="M0 40V34h30v-3h8V20h44v11h8v3h30v6zM50 20a10 10 0 0 1 20 0z"/></svg></div><figcaption lang="hi">शाम, इंडिया गेट, और तुम<small>photo by you · credit always ♥</small></figcaption></figure>
+          <figure class="frame"><div class="meta"><span>FRAME 001</span><span>OLD DELHI</span></div><div class="pic"><img src="images/jama-lane.jpg" alt="A crowded Old Delhi lane under tangled wires, with the dome of Jama Masjid at the far end" loading="lazy"></div><figcaption lang="hi">गली के आख़िर में जामा मस्जिद<small>photo: your name ♥ credit always</small></figcaption></figure>
+          <figure class="frame"><div class="meta"><span>FRAME 002</span><span>JAMA MASJID</span></div><div class="pic"><img src="images/jama-minarets.jpg" alt="Jama Masjid minarets rising behind a green and yellow auto-rickshaw" loading="lazy"></div><figcaption lang="hi">ऑटो, मीनार और नीला आसमान<small>photo: your name ♥ credit always</small></figcaption></figure>
+          <figure class="frame"><div class="meta"><span>FRAME 003</span><span>LAL QILA</span></div><div class="pic"><img src="images/red-fort.jpg" alt="The Red Fort walls and flag seen over yellow police barricades" loading="lazy"></div><figcaption lang="hi">लाल क़िले की धुंधली सुबह<small>photo: your name ♥ credit always</small></figcaption></figure>
+          <figure class="frame"><div class="meta"><span>FRAME 004</span><span>INDIA GATE</span></div><div class="pic"><img src="images/india-gate.jpg" alt="India Gate under a deep blue sky with people on the lawn" loading="lazy"></div><figcaption lang="hi">इंडिया गेट, और सब अपने<small>photo: your name ♥ credit always</small></figcaption></figure>
         </div>
       </div>
     </div>
